@@ -1,6 +1,6 @@
 mod topics;
 
-// Select the required module and its main function to run. 
+// Select the required module and its main function to run.
 fn main() {
-    topics::algorithms::a_very_big_sum::main();
+    topics::algorithms::staircase::main();
 }

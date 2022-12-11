@@ -21,7 +21,7 @@ fn compare_triplets(a: &[i32], b: &[i32]) -> Vec<i32> {
         let (_ai, _bi) = it;
         if _ai > _bi {
             result[0] += 1;
-        } else if _ai < _bi  {
+        } else if _ai < _bi {
             result[1] += 1;
         }
     }
@@ -35,13 +35,19 @@ pub fn main() {
 
     let mut fptr = File::create("output.txt").unwrap();
 
-    let a: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
+    let a: Vec<i32> = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
         .trim_end()
         .split(' ')
         .map(|s| s.to_string().parse::<i32>().unwrap())
         .collect();
 
-    let b: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
+    let b: Vec<i32> = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
         .trim_end()
         .split(' ')
         .map(|s| s.to_string().parse::<i32>().unwrap())

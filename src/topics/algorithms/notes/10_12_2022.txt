@@ -1,12 +1,13 @@
 // solve_me_first
 As a newbie in Rust, I realize I have to do some tricks to setup the environment locally.
 
-For the fptr variable: 
+1. For the fptr variable: 
 ```    
     let mut fptr = File::create("output.txt").unwrap(); 
     (Create the output.txt file to write the answer).
 ```
-For the result variable: 
+
+2. For the result variable: 
 ```
     println!("{}", result); 
     (Print the result to the console).
@@ -14,22 +15,25 @@ For the result variable:
 
 // simple_array_sum / a_very_big_sum
 To calculate the sum of the array, I can:
+1. Use the sum() method of the iterator trait.
 ```
     let sum = arr.iter().sum(); 
-    (Use the sum() method of the iterator trait).
 ```
+
 or
+
+2. Naively iterate over the array and sum the elements.
 ```
     let mut sum = 0;
     for i in ar {
         sum += i;        
     }
     sum 
-    (Naively iterate over the array and sum the elements).
 ```
 
 // compare_the_triplets
 I can use the zip() method of the iterator trait to iterate over two arrays at the same time.
+
 The vec! macro is used to create a vector.
 ```
     let mut result: Vec<i32> = vec![0, 0];

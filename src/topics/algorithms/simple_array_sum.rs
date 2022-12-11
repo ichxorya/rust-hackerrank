@@ -15,7 +15,7 @@ use std::io::{self, BufRead, Write};
 fn simple_array_sum(ar: &[i32]) -> i32 {
     let mut sum = 0;
     for i in ar {
-        sum += i;        
+        sum += i;
     }
     sum
 }
@@ -26,9 +26,18 @@ pub fn main() {
 
     let mut fptr = File::create("output.txt").unwrap();
 
-    let _ar_count = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
+    let _ar_count = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
+        .trim()
+        .parse::<i32>()
+        .unwrap();
 
-    let ar: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
+    let ar: Vec<i32> = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
         .trim_end()
         .split(' ')
         .map(|s| s.to_string().parse::<i32>().unwrap())

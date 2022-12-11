@@ -1,0 +1,50 @@
+// diagonal_difference
+1. To call the abs function for a numeric variable, you have to explicitly cast it to a numeric type. 
+```
+    let mut result: i32 = 0;
+    ...
+    result.abs()
+```
+
+2. I was trying to use iterator to solve this problem, but it's easier to use an indexed for loop. 
+
+3. How to initialize a 2D square grid of size n?
+```
+    let mut arr: Vec<Vec<i32>> = Vec::with_capacity(n as usize);
+```
+
+// plus_minus
+1. To compare the iterator element with a number, you have to dereference it.
+```
+    for i in arr {
+        if *i > 0 {
+            ...
+        } 
+    }
+```
+
+2. To format the float number to 6 decimal places, you can use the println! macro as:
+```
+    println!("{:.6}\n{:.6}\n{:.6}", 
+        (result[0] as f64 / result[3] as f64), 
+        (result[1] as f64 / result[3] as f64), 
+        (result[2] as f64 / result[3] as f64)
+    );
+```
+
+// staircase
+1. To fill a string of n characters with repeating characters, you can use the repeat method.
+```
+    let mut empty = String::new();
+    empty.push_str(" ".repeat((n - i).try_into().unwrap()).as_str());
+    let mut fill = String::new();
+    fill.push_str("#".repeat(i.try_into().unwrap()).as_str());
+```
+
+or
+
+2. You can use the map method, too.
+```
+    let empty = (0..n-i).map(|_| " ").collect::<String>();
+    let fill = (0..i).map(|_| "#").collect::<String>();
+``
