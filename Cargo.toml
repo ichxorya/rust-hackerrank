@@ -1,5 +1,5 @@
 [package]
-name = "hacker-rust-rank"
+name = "rust-hackerrank"
 version = "0.1.0"
 authors = ["Ichxorya"]
 edition = "2021"
