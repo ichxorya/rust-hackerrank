@@ -10,7 +10,7 @@ use std::io::{self, BufRead};
 
 fn staircase(n: i32) {
     for i in 1..=n {
-        let empty = (0..n-i).map(|_| " ").collect::<String>();
+        let empty = (0..n - i).map(|_| " ").collect::<String>();
         let fill = (0..i).map(|_| "#").collect::<String>();
         // let mut empty = String::new();
         // empty.push_str(" ".repeat((n - i).try_into().unwrap()).as_str());
@@ -25,8 +25,13 @@ pub fn main() {
     let stdin = io::stdin();
     let mut stdin_iterator = stdin.lock().lines();
 
-    let n = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
+    let n = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
+        .trim()
+        .parse::<i32>()
+        .unwrap();
 
     staircase(n);
 }
- 

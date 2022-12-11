@@ -48,3 +48,31 @@ or
     let empty = (0..n-i).map(|_| " ").collect::<String>();
     let fill = (0..i).map(|_| "#").collect::<String>();
 ``
+
+// birthday_cake_candles
+```
+    fn birthday_cake_candles(candles: &[i32]) -> i32 {
+        // Get the highest candle (max of the array)
+        let highest = candles.iter().max().unwrap();
+        
+        // Count the number of highest candles using filter method
+        candles.iter().filter(|&candle| candle == highest).count().try_into().unwrap()
+    }
+```
+
+// time_conversion
+1. To convert a string to a number, you can use the parse method.
+```
+    let mut new_hour: i32 = old_hour.parse().unwrap();
+```
+
+2. To convert a number to a string, you can use the to_string method.
+```
+    let new_hour = new_hour.to_string();
+```
+
+3. To truncate a string, you can use the truncate method. 
+Note: For Unicode strings, the truncate method may not truncate at the desired codepoint boundary.
+```
+    new_hour.truncate(2);
+```

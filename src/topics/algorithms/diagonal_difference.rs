@@ -53,6 +53,6 @@ pub fn main() {
 
     let result = diagonal_difference(&arr);
     println!("{}", result);
-    
+
     writeln!(&mut fptr, "{}", result).ok();
 }
