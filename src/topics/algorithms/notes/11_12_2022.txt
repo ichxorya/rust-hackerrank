@@ -72,7 +72,8 @@ or
 ```
 
 3. To truncate a string, you can use the truncate method. 
+```
+    new_hour.truncate(8);
+```
 Note: For Unicode strings, the truncate method may not truncate at the desired codepoint boundary.
-```
-    new_hour.truncate(2);
-```
+See more: https://stackoverflow.com/questions/38461429/how-can-i-truncate-a-string-to-have-at-most-n-characters

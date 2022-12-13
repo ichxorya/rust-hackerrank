@@ -1,0 +1,48 @@
+// grading_students
+1. The requirements could be demonstrated like this:
+- If the difference between the next multiple of five and the grade is smaller than 3: Round it up to the next multiple of five.
+Example: 84 -> 85 (85 - 84 < 3)
+- If the grade is less than 38: Don't round it up (still smaller than 40, failing grade).
+Example: 29 -> 29 (29 < 38)
+         37 -> 37 (37 < 38 and 40 - 37 >= 3)
+         38 -> 40 (40 - 38 < 3)
+
+2. I was overthinking (true), and waste much time on this simple problem. I should have planned more carefully.
+
+Anyway, here's the simple solution (pseudo code):
+- If the grade is less than 38 or equal to 100, return the grade.
+- If the grade is greater than 38, check the last digit of the grade.
+- If the last digit is 3 or 8, add 2 to the grade.
+- If the last digit is 4 or 9, add 1 to the grade.
+
+```
+    if (grade < 38 && grade == 100) {
+        return grade;
+    }
+    else {
+        if (grade % 10 == 3 || grade % 10 == 8) {
+            return grade + 2;
+        }
+        else if (grade % 10 == 4 || grade % 10 == 9) {
+            return grade + 1;
+        }
+        else {
+            return grade;
+        }
+    }
+```
+
+3. The code can be shortened if using the rounding formula (pseudo code):
+```
+    if (grade < 38) {
+        return grade;
+    }
+    else {
+        if (grade % 5 >= 3) {
+            return grade + (5 - (grade % 5));
+        }
+        else {
+            return grade;
+        }
+    }
+```
