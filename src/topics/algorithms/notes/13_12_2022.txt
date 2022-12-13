@@ -46,3 +46,54 @@ Anyway, here's the simple solution (pseudo code):
         }
     }
 ```
+
+// mini_max_sum
+1. My algorithm's idea:
+- Copy the array to a new container (64 bit integer).
+- Sort the container.
+- Get the sum of the first four elements and the last four elements.
+
+```
+    fn mini_max_sum(arr: &[i32]) {
+        let mut temp_arr: Vec<i64> = vec!();
+        for i in arr {
+            temp_arr.push(*i as i64);
+        }
+
+        temp_arr.sort();
+        let minsum: i64 = temp_arr[0] + temp_arr[1] + temp_arr[2] + temp_arr[3];
+        let maxsum: i64 = temp_arr[1] + temp_arr[2] + temp_arr[3] + temp_arr[4];
+
+        println!("{} {}", minsum, maxsum);
+    }
+```
+
+2. The above algorithm is not efficient.
+Here's the efficient solution (based on the HackerRank's Editorial):
+Basically:
+- Get the sum of all elements, the max and the min of the array.
+- MinSum = Sum - Max (the max element is not included in the sum).
+- MaxSum = Sum - Min (the min element is not included in the sum).
+
+```
+    fn mini_max_sum(arr: &[i32]) {
+        let mut sum: i64 = 0;
+        let mut max: i64 = i64::MIN;
+        let mut min: i64 = i64::MAX;
+
+        for i in arr {
+            let n: i64 = *i as i64;
+            sum += n;
+
+            if min > n {
+                min = n;
+            }
+
+            if max < n {
+                max = n;
+            }
+        }
+
+        println!("{} {}", sum - max, sum - min);
+    }
+```
