@@ -1,0 +1,47 @@
+// array_ds
+A basic for-loop problem.
+
+1. To iterate over an array backwards, we can use:
+```
+    for i in array.iter().rev() { ... }
+```
+
+2. The problem could be simply finished with Rust's provided functions.
+```
+    let mut result: Vec<i32> = array.to_vec();
+    result.reverse();
+    result
+```
+
+// array2d_ds
+Pretty daunting at the first look, however, the problem is a child's play.
+
+1. Given a 6x6 matrix, we have to find the biggest hourglass sum.
+A hourglass is something like this
+```
+    a b c 0 0 0
+    0 d 0 0 0 0
+    e f g 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+```
+The hourglass sum of the example is a + b + c + d + e + f + g.
+
+The matrix could have many hourglasses.
+
+2. The algorithm:
+- As we have a 6x6 matrix, and the range of the hourglasses could be reached from their center:
+We could just iterate from index 1 to 4, horizontally and vertically:
+```
+    0 0 0 0 0 0
+    0 - - - - 0
+    0 - - - - 0
+    0 - - - - 0
+    0 - - - - 0
+    0 0 0 0 0 0  
+```
+- We initialize the biggest sum variable. 
+Note: The initial value should be very small (in this case: i32::MIN), as we will compare each sum (maybe negative) to it.
+      Setting it to 0 won't do for negative values!
+- Finally: return the biggest sum value.
