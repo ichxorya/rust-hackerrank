@@ -41,7 +41,7 @@ We could just iterate from index 1 to 4, horizontally and vertically:
     0 - - - - 0
     0 0 0 0 0 0  
 ```
-- We initialize the biggest sum variable. 
+- We initialize the biggest sum variable. Calculate the sums through the iterations.
 Note: The initial value should be very small (in this case: i32::MIN), as we will compare each sum (maybe negative) to it.
       Setting it to 0 won't do for negative values!
 - Finally: return the biggest sum value.
